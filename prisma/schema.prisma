@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Rocket {
+  id Int @id @default(autoincrement())
+  name String @unique
+  description String
+  height Int
+  diameter Int
+  weight Int
+  image_profile String
+
+  @@map("rockets")
+}

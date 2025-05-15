@@ -14,7 +14,7 @@ git clone https://github.com/albanogabriel/plathanos-rockets.git
       NODE_ENV=development
       DATABASE_URL="postgresql://user:rocket123@rocket-db:5432/apirocket"
 
-# 3. Inicie o container do PostgreSQL/Prisma com o comando:
+# 3. Inicie o container da aplicação:
 
 > docker network create app-network  
 > docker compose up -d

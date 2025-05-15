@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  rocket-db:
+    image: bitnami/postgresql
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRESQL_USERNAME=user
+      - POSTGRESQL_PASSWORD=rocket123
+      - POSTGRESQL_DATABASE=apirocket
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  rocket-api:
+    build: .
+    restart: always
+    command: sh -c "npx prisma migrate dev && echo create_table | yarn dev"
+    env_file:
+      - .env
+    ports:
+      - '3333:3333'
+    depends_on:
+      - rocket-db
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge

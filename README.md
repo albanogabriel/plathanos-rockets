@@ -6,6 +6,13 @@
 [![Node.js](https://img.shields.io/badge/Node.js-✓-green?logo=node.js)](https://nodejs.org)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-✓-blue?logo=postgresql)](https://postgresql.org)
 
+## 🛠️ Tecnologias utilizadas
+
+- **Containers**: Docker
+- **ORM**: Prisma
+- **Database**: PostgreSQL
+- **API Language**: NODE.JS e Typescript
+
 ## 📋 Pré-requisitos
 
 Antes de começar, verifique se você tem instalado:
